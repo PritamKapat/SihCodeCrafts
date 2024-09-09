@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>{% block title %}{% endblock title %}</title>
+<style>
+  
+.nav-wrapper {
+    /* From https://css.glass */
+background: rgba(0, 0, 0, 0.25);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(16.5px);
+-webkit-backdrop-filter: blur(16.5px);
+border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 10px 20px; /* Padding for spacing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand Logo Styling */
+
+/* Navbar List */
+#nav-mobile {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display items inline */
+    gap: 20px; /* Space between items */
+}
+
+/* Navbar Links */
+#nav-mobile li a {
+    color: #ffffff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding inside the link */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for Links */
+#nav-mobile li a:hover {
+    background-color: #575757; /* Slightly lighter background on hover */
+    border-radius: 4px; /* Rounded corners */
+}
+#icon {
+  width: 50px;
+  height: 50px;
+}
+
+</style>
+
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href={% url "index-page" %} class="brand-logo"><img id="icon" src="https://static.vecteezy.com/system/resources/previews/002/103/001/original/american-fast-food-dark-mode-glyph-icon-vector.jpg" alt="Logo"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href={% url "index-page" %}>Home</a></li>
+        <li><a href={% url "job-page" %}>JobTrend</a></li>
+        <li><a href={% url "learn-page" %}>Learning</a></li>
+        <li><a href={% url "profile-page" %}>My Profile</a></li>
+      </ul>
+    </div>
+  </nav>
+      <!--nav end  -->
+      <!-- sugar tag:-->
+{% block main %}{% endblock main %}
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
