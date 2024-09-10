@@ -9,3 +9,5 @@ def learn(request):
     return render(request, "learn.html")
 def profile(request):
     return render(request, "profile.html")
+def home2(request):
+    return render(request, "home2.html")
